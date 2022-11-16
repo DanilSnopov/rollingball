@@ -23,7 +23,7 @@ class Ball:
         self.acceleration = acceleration
         self.radius = radius
         self.time = time
-        if not self.check_instance():
+        if self.check_instance():
             raise ValueError
         self.length_circle = 2 * self.radius * math.pi
 
@@ -52,7 +52,7 @@ class Ball:
             flag: bool - if parameters is int and bigger than 0.
         """
         if isinstance(all([self.radius, self.acceleration, self.time, self.speed]), int | float):
-            if all([self.radius, self.acceleration, self.time, self.speed]) > 0:
+            if self.radius > 0 and self.acceleration > 0 and self.time > 0 and self.speed > 0:
                 return True
         return False
 # print(Ball('5', '5', '5', '5').find_angle_speed())
