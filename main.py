@@ -55,4 +55,3 @@ class Ball:
             if all([self.radius, self.acceleration or self.speed, self.time]):
                 return True
         return False
-print((Ball(5, 0, 1, 12).find_angle_speed()))
