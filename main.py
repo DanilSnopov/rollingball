@@ -51,8 +51,8 @@ class Ball:
         Returns:
             flag: bool - if parameters is int and bigger than 0.
         """
-        if isinstance(all([self.radius, self.acceleration, self.time, self.speed]), int):
+        if isinstance(all([self.radius, self.acceleration, self.time, self.speed]), int | float):
             if all([self.radius, self.acceleration, self.time, self.speed]):
                 return True
         return False
-# print(Ball(5, 2, 1, 5).find_angle_acceleration())
+# print(Ball(4, 2, 10, 6).find_angle_speed())
