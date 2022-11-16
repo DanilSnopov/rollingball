@@ -9,7 +9,8 @@ def test_speed(acceleration, radius, time, angle):
     """Проверяет правильность нахождения угла поворота при равноускоренном движении."""
     assert Ball(0, acceleration, radius, time).find_angle_acceleration() == angle
 
-# @pytest.mark.xfail(raises = ValueError)
-# def test_err_uniform_moving():
-#     with pytest.raises(ValueError):
-#         Ball(-1, "5", 18, "Hello")
+
+@pytest.mark.xfail(raises = ValueError)
+def test_err_uniform_moving():
+    with pytest.raises(ValueError):
+        Ball(-1, "5", 18, "Hello")
