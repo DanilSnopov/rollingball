@@ -51,8 +51,6 @@ class Ball:
         Returns:
             flag: bool - if parameters is int and bigger than 0.
         """
-        for class_variable in [self.radius, self.acceleration, self.time, self.speed]:
-            if not(isinstance(class_variable, (int, float))) or class_variable < 0:
-                return False
-        return True
+        class_variables = [self.radius, self.acceleration, self.time, self.speed]
+        return not isinstance(all(class_variables), (int, float)) or all(class_variables) < 0
 # print(Ball(0, 55, 1.2, 9).find_angle_acceleration())
